@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: ComicCode;
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ComicCode;
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Bold.otf") format("opentype");
+}
+
+@theme {
+    --font-comic: "ComicCode", sans-serif;
+}
