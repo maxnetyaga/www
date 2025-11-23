@@ -1,13 +1,13 @@
 ---
 import "@/styles/global.css";
-import { reportModifiedTime } from "@/utils.ts";
+import { reportPageModifiedTime } from "@/utils.ts";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils.ts";
 
-interface Props {
-    pagePath: string;
-}
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
 
-const pagePath = Astro.props.pagePath;
-const pageModifiedDate = reportModifiedTime(pagePath);
+const page = Astro.url.pathname;
+const modifiedTime = reportPageModifiedTime(page);
 ---
 
 <!doctype html>
@@ -19,9 +19,11 @@ const pageModifiedDate = reportModifiedTime(pagePath);
         <meta name="generator" content={Astro.generator} />
         <title>Astro Basics</title>
     </head>
-    <body>
+    <body class="flex flex-col justify-between p-2">
         <slot />
-        {pageModifiedDate}
+        <footer>
+            {translate("layout.page_modified_at")}: {modifiedTime}
+        </footer>
     </body>
 </html>
 
