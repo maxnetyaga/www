@@ -37,7 +37,7 @@ const modifiedTime = reportPageModifiedTime(page);
       <slot />
     </main>
     <footer
-      class="text-black border-white border-t h-fit flex justify-between text-xs [&_span]:px-2 [&_span]:py-1">
+      class="text-black border-white border-t h-fit flex flex-col sm:flex-row justify-between text-xs [&_span]:px-2 [&_span]:py-1 [&_span]:flex [&_span]:justify-center [&_span]:items-center [&_span]:w-full [&_span]:text-center sm:[&_span]:w-fit sm:[&_span]:text-left">
       <div class="flex">
         <span class="bg-[#F1C40F]">
            {translate("layout.page_modified_at")}: {modifiedTime}
