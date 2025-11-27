@@ -1,21 +1,66 @@
-@import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 @font-face {
-    font-family: ComicCode;
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-    src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Regular.otf") format("opentype");
+  font-family: ComicCode;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Regular.otf")
+    format("opentype");
 }
 
 @font-face {
-    font-family: ComicCode;
-    font-style: normal;
-    font-weight: bold;
-    font-display: swap;
-    src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Bold.otf") format("opentype");
+  font-family: ComicCode;
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/comic-code/nerd-font/ComicCodeNerdFontMono-Italic.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: ComicCode;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/comic-code/nerd-font/ComicCodeLigaturesNerdFontMono-Bold.otf")
+    format("opentype");
 }
 
 @theme {
-    --font-comic: "ComicCode", sans-serif;
+  --font-comic: "ComicCode", sans-serif;
+}
+
+::selection {
+  color: black;
+  background-color: white;
+}
+
+.rainbow {
+    height: 200px;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet); /* Standard syntax (must be last) */
+    background-clip: text;
+    color: transparent;
+}
+
+.wobbly-border {
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 110px 19px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 2px;
+  text-decoration-color: crimson;
+
+  &:hover {
+    text-decoration-color: rebeccapurple;
+  }
 }

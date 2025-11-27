@@ -27,7 +27,7 @@ export function reportPageModifiedTime(page: string) {
 
   const filePath = simplePagePath;
 
-  const errorMsg = "file wasn't commited yet";
+  const errorMsg = "file hasn't been committed yet";
   try {
     const result = execSync(`git log -1 --pretty="format:%cI" "${filePath}"`);
     return result.toString() || errorMsg;

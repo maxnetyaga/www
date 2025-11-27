@@ -8,8 +8,12 @@ export const defaultLang = "uk";
 export const ui = {
   en: {
     "layout.page_modified_at": "Modified at",
+    "layout.pgp": "openpgp",
+    "layout.mail": "mail me",
   },
   uk: {
     "layout.page_modified_at": "Дата оновлення",
+    "layout.pgp": "openpgp",
+    "layout.mail": "напишіть мені",
   },
 } as const;
